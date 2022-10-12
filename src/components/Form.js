@@ -9,25 +9,18 @@ const Form = (props) => {
     
     const submitHandler = (e) => {
         e.preventDefault()
-
-        const newBox = {
-            color: color
-        }
-        console.log(newBox)
-        
         setBoxes([...boxes,{color: color}])
-
         setColor("")
     }
 
     return (
-    <>
-        <form className={styles.form} onSubmit={submitHandler}>
-            <label>Color</label>
-            <input className="form-control" type="text" onChange={(e) => setColor(e.target.value)} value={color}/>
+    <div className="container d-flex justify-content-center mt-3">
+        <form className='d-flex col-6 align-items-center' onSubmit={submitHandler}>
+            <label className='me-2'><b>Color</b></label>
+            <input className="form-control me-2" type="text" onChange={(e) => setColor(e.target.value)} value={color}/>
             <button className='btn btn-primary'>Add</button>
         </form>
-    </>
+    </div>
     )
 }
 
